@@ -7,18 +7,15 @@ const app = express()
 const UserRouter = require("./Router/user.router")
 app.use(express.json())
 
-app.use(cors({
-    origin : 3000
-}))
+app.use(cors())
 
 app.use("/user",UserRouter)
 
 app.get("/health",(req,res)=>{
-    console.log("Hi OKKKK")
     res.send("OK")
 })
 
-app.listen(process.env.PORT,async(req,res)=>{
+app.listen(process.env.PORT,async()=>{
     await connect()
     console.log(`Listeninig on port : ${process.env.PORT}`)
 })
