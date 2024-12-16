@@ -5,9 +5,11 @@ var cors = require('cors')
 const connect = require("./config/db")
 const app = express()
 const UserRouter = require("./Router/user.router")
-app.use(cors())
 app.use(express.json())
 
+app.use(cors({
+    origin : 3000
+}))
 
 app.use("/user",UserRouter)
 
