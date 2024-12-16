@@ -14,6 +14,7 @@ app.use(cors({
 app.use("/user",UserRouter)
 
 app.get("/health",(req,res)=>{
+    console.log("Hi OKKKK")
     res.send("OK")
 })
 
